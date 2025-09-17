@@ -1,0 +1,134 @@
+body, html { 
+  height: 100vh; 
+  overflow: hidden; 
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Star Styles */
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Different exit animations */
+.slide-up {
+  animation: slideUp 2s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-100vh); }
+}
+
+.zoom-out {
+  animation: zoomOut 2s ease-in-out forwards;
+}
+
+@keyframes zoomOut {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(3); }
+}
+
+.spin-away {
+  animation: spinAway 2s ease-in-out forwards;
+}
+
+@keyframes spinAway {
+  0% { opacity: 1; transform: rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: rotate(720deg) scale(0); }
+}
+
+.dissolve {
+  animation: dissolve 3s ease-in-out forwards;
+}
+
+@keyframes dissolve {
+  0% { opacity: 1; filter: blur(0px); }
+  50% { filter: blur(2px); }
+  100% { opacity: 0; filter: blur(10px); }
+}
+
+/* Fade out animation */
+.fade-out {
+  animation: fadeOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+/* Moon Animation Styles */
+.moon-spin {
+  animation: spin 3s linear infinite;
+}
+
+.moon-spin-reverse {
+  animation: spin 3s linear infinite reverse;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.gentle-pulse {
+  animation: gentlePulse 2s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.ping-effect {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Curtain Split Animation */
+.curtain-left {
+  animation: slideLeft 2s ease-in-out forwards;
+}
+
+.curtain-right {
+  animation: slideRight 2s ease-in-out forwards;
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+/* Content reveal */
+.content-reveal {
+  animation: contentFadeIn 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes contentFadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
