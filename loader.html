@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Children's Book Loader</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      body, html { height: 100vh; overflow: hidden; }
+      .animate-spin-slow { animation: spin 3s linear infinite; }
+      @keyframes spin { 100% { transform: rotate(360deg); } }
+      .animate-pulse-custom { animation: pulse 2s infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+      .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+      @keyframes fade-in { 0% { opacity: 0; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); } }
+    </style>
+  </head>
+  <body class="bg-gradient-to-b from-indigo-900 via-purple-800 to-blue-900 flex items-center justify-center min-h-screen">
+    <div class="absolute inset-0">
+      <!-- Random stars -->
+      <script>
+        for (let i = 0; i < 20; i++) {
+          const star = document.createElement('div');
+          star.className = "absolute w-1 h-1 bg-white rounded-full animate-pulse-custom";
+          star.style.left = Math.random() * 100 + '%';
+          star.style.top = Math.random() * 100 + '%';
+          star.style.animationDelay = (Math.random() * 2) + 's';
+          star.style.animationDuration = (1 + Math.random() * 2) + 's';
+          document.body.appendChild(star);
+        }
+      </script>
+    </div>
+    <div class="relative">
+      <div class="w-64 h-64 rounded-full bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 animate-spin-slow opacity-30 blur-sm"></div>
+      <div class="absolute inset-4 rounded-full bg-gradient-to-r from-green-300 via-emerald-200 to-teal-300 animate-spin-slow opacity-50 blur-xs"></div>
+      <div class="absolute inset-8 rounded-full bg-gradient-to-b from-sky-200 via-green-100 to-emerald-200 animate-pulse-custom shadow-2xl shadow-emerald-400/50">
+        <div class="absolute inset-2 rounded-full bg-gradient-to-tr from-transparent via-white/30 to-transparent animate-pulse-custom"></div>
+      </div>
+    </div>
+    <div class="absolute bottom-20 text-center w-full">
+      <h1 class="text-3xl font-bold text-gray-100 mb-4 animate-pulse-custom drop-shadow-lg">Welcome to Camp Adventure</h1>
+      <div class="text-lg text-gray-200 drop-shadow-md">Preparing your magical journey...</div>
+    </div>
+  </body>
+</html>
