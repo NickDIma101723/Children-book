@@ -42,27 +42,18 @@
 
     <!-- Video Content -->
     <div id="video-container" class="hidden min-h-screen bg-black flex items-start justify-center relative">
-      <div class="w-full h-full relative -mt-4">
-        <video id="main-video" class="w-full h-screen object-cover" controls autoplay>
-          <source src="Animatie opdracht nick,joRGE,MALIKHAI (1).mp4" type="video/mp4">
+      <div class="w-full h-full relative max-h-screen overflow-hidden">
+        <video id="main-video" class="w-full h-screen object-cover" autoplay muted controls>
+          <source src="animation Jorge,Nick,Malikhai.mp4.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         
-        <!-- Header Information Overlay at Bottom -->
-        <div class="absolute -bottom-2 left-0 right-0 bg-gray-900 bg-opacity-50 text-white p-4 backdrop-blur-sm">
-          <h1 class="text-xl font-bold mb-1">Creative Software Developer</h1>
-          <p class="text-sm opacity-90 mb-2">KINDERBOEKENWEEK • VOL AVONTUUR > CREATIVE CODING OPDRACHT</p>
-          <div class="flex space-x-8 text-sm">
-            <div>
-              <span class="opacity-70">Student Naam:</span>
-              <span class="ml-2 font-medium">Nick Dima</span>
-            </div>
-            <div>
-              <span class="opacity-70">Jorge Olteanu Simoes</span>
-            </div>
-            <div>
-              <span class="opacity-70">Malikhai Felix</span>
-            </div>
+        <!-- Compact Header Information - Top Left Corner -->
+        <div class="absolute top-4 left-4 bg-black bg-opacity-60 text-white p-3 rounded-lg backdrop-blur-sm text-xs max-w-xs">
+          <div class="font-bold mb-1">Creative Software Developer</div>
+          <div class="opacity-80 mb-2 text-xs">KINDERBOEKENWEEK • CREATIVE CODING</div>
+          <div class="space-y-1">
+            <div class="opacity-70">Nick Dima • Jorge Olteanu Simoes • Malikhai Felix</div>
           </div>
         </div>
       </div>
