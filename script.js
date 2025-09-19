@@ -47,8 +47,8 @@ function showVideo() {
     videoContainer.style.transition = 'opacity 1s ease-in-out';
     videoContainer.style.opacity = '1';
     
-    // Make video play slower (0.8 = 80% speed)
-    video.playbackRate = 0.8;
+    // Make video play slower (0.5 = 50% speed, moderate slow)
+    video.playbackRate = 0.5;
     
     // Start subtitle system immediately
     initializeSubtitles(video);
@@ -59,13 +59,33 @@ function showVideo() {
 function initializeSubtitles(video) {
   // Define subtitle timings (in seconds) and character dialogue
   const subtitles = [
-    { start: 2, end: 8, character: "Benny de Beer", text: "Welkom, vrienden! Ik ben Benny de Beer, en vandaag gaan we op een GROOT avontuur!" },
-    { start: 9, end: 12, character: "Sam de Blauwe Vogel", text: "Waar gaan we naartoe?" },
-    { start: 13, end: 18, character: "Benny de Beer", text: "We trekken het bos in. Sommigen zeggen dat daar een monster leeft!" },
-    { start: 19, end: 22, character: "Noor de Sok", text: "Hopelijk niet ergens gevaarlijks..." },
-    { start: 23, end: 26, character: "Sam de Blauwe Vogel", text: "Een monster? Echt?" },
-    { start: 27, end: 30, character: "Noor de Sok", text: "Dat klinkt niet goed." },
-    { start: 31, end: 35, character: "Timo de Hond", text: "Ik ruik avontuur! Laten we gaan!" }
+    // Scene 1: At the camp houses (3-17 seconds = 14 seconds total)
+    { start: 3, end: 5, character: "Benny de Beer", text: "Welkom, vrienden! Ik ben Benny de Beer, en vandaag gaan we op een GROOT avontuur!" },
+    { start: 6, end: 7, character: "Sam de Blauwe Vogel", text: "Waar gaan we naartoe?" },
+    { start: 8, end: 10, character: "Benny de Beer", text: "We trekken het bos in. Sommigen zeggen dat daar een monster leeft!" },
+    { start: 11, end: 12, character: "Noor de Sok", text: "Hopelijk niet ergens gevaarlijks..." },
+    { start: 13, end: 14, character: "Sam de Blauwe Vogel", text: "Een monster? Echt?" },
+    { start: 15, end: 16, character: "Noor de Sok", text: "Dat klinkt niet goed." },
+    { start: 16.5, end: 17, character: "Timo de Hond", text: "Ik ruik avontuur! Laten we gaan!" },
+    
+    // Scene 2: In the woods (18-28 seconds = 10 seconds total)
+    { start: 18, end: 19.5, character: "Noor de Sok", text: "Waarom hoor ik geen vogels meer?" },
+    { start: 19.7, end: 21.2, character: "Sam de Blauwe Vogel", text: "Ik heb het gevoel dat… iemand ons volgt." },
+    { start: 21.4, end: 22.5, character: "Noor de Sok", text: "Wat was dat?!" },
+    { start: 22.7, end: 24, character: "Timo de Hond", text: "Grrr… iets beweegt daar!" },
+    { start: 24.2, end: 25.5, character: "Benny de Beer", text: "Misschien het monster?" },
+    { start: 25.7, end: 26.8, character: "Sam de Blauwe Vogel", text: "Moeten we rennen?" },
+    { start: 27, end: 28, character: "Timo de Hond", text: "Of jagen! Woef!" },
+    
+    // Scene 3: Deeper in the woods (29-45 seconds)
+    { start: 29, end: 32, character: "Verteller", text: "Benny en de groep gaan nu dieper het bos in." },
+    { start: 41, end: 45, character: "Benny de Beer", text: "Kies: links naar de grot of rechts naar het meer!" },
+    
+    // Scene 4: At the lake (45-52 seconds)
+    { start: 45, end: 47, character: "Benny de Beer", text: "Soms is avontuur gewoon genieten van de natuur." },
+    { start: 47.5, end: 49, character: "Sam de Blauwe Vogel", text: "Wauw… wat een mooi uitzicht!" },
+    { start: 49.5, end: 50.5, character: "Noor de Sok", text: "Het water glinstert zo mooi." },
+    { start: 51, end: 52, character: "Timo de Hond", text: "Ik wil springen! Maar… nee, ik blijf gewoon kijken." }
   ];
 
   const subtitleContainer = document.getElementById('subtitles-container');
